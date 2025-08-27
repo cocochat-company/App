@@ -2,9 +2,16 @@
   "name": "app",
   "version": "1.0.0",
   "description": "Cocochat company app",
-  "main": "index.js",
+  "main": "dist/cocochat.umd.js",
+  "module": "dist/cocochat.es.js",
+  "unpkg": "dist/cocochat.umd.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "vite build",
+    "dev": "vite",
+    "preview": "vite preview"
   },
   "repository": {
     "type": "git",
@@ -12,8 +19,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "type": "commonjs",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/cocochat-company/App/issues"
   },

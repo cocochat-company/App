@@ -8,7 +8,6 @@ export default defineConfig({
             name: 'CocoChat',
             fileName: 'cocochat',
             formats: ['es', 'umd'],
-        },
-        rollupOptions: {}
+        }
     }
 });
