@@ -1,11 +1,14 @@
 const comment = () => {
     const comments = [
-        document.createComment("Test COmment"),
-        document.createComment("Test COmment 2"),
+        document.createComment("Developer => https://github.com/tikrack"),
     ]
 
+    const coco_chat_button = document.querySelector(".coco_chat_button")
+
     comments.map(comment => {
-        document.body.appendChild(comment)
+        if (coco_chat_button) {
+            coco_chat_button.appendChild(comment)
+        }
     })
 }
 
