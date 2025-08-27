@@ -74,6 +74,7 @@
     background-color: var(--page-background);
     border-radius: 20px;
     box-shadow: 0 0 50px -40px #616161;
+    z-index: calc(var(--cocochat-max-z-index) + 1);
 }
 
 .coco_chat_wrapper:has(.coco_chat_page[open])  .coco_chat_button {
@@ -84,7 +85,7 @@
     position: absolute;
     width: 25px;
     height: 25px;
-    background-color: #e6e6e6;
+    background-color: color-mix(in srgb, var(--color-cocochat-primary) 50%, rgba(0, 0, 0, 0.2));
     cursor: pointer;
     top: 10px;
     left: 10px;
@@ -96,5 +97,12 @@
 }
 
 .coco_chat_close_page_icon path {
-    stroke: darkslategray;
+    stroke: #efefef;
+}
+
+.coco_chat_page_header {
+    width: 100%;
+    height: 80px;
+    background-color: color-mix(in srgb, var(--color-cocochat-primary) 85%, transparent);
+    border-radius: 20px 20px 0 0;
 }

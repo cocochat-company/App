@@ -17,8 +17,8 @@ const page = () => {
         </svg>
     `)
     page.insertAdjacentHTML("beforeend", `
-        <div>
-        
+        <div class="coco_chat_page_header">
+            
         </div>
     `)
 
