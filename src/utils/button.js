@@ -5,7 +5,8 @@ const button = () => {
     document.coco_wrapper.appendChild(element)
 
     element.addEventListener("click", (e) => {
-        console.log("pk")
+        let page = document.querySelector(".coco_chat_page")
+        page.toggleAttribute("open")
     })
 }
 

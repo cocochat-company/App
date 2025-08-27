@@ -4,11 +4,13 @@ import button from "./utils/button";
 import comment from "./utils/comment";
 import wrapper from "./utils/wrapper";
 import styles from "./utils/styles";
+import page from "./utils/page";
 
 document.addEventListener("DOMContentLoaded", () => {
     styles()
     wrapper(() => {
         button()
         comment()
+        page()
     })
 })

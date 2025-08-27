@@ -1,7 +1,8 @@
 :root {
     --color-cocochat-primary: #0005b3;
     --color-cocochat-primary-dark: #00047c;
-    --max-z-index: 1000;
+    --page-background: #ffffff;
+    --cocochat-max-z-index: 10000;
 }
 
 @keyframes toUp {
@@ -21,7 +22,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: var(--max-z-index);
+    z-index: var(--cocochat-max-z-index);
     animation-name: toUp;
     animation-duration: 200ms;
     animation-delay: 1s;
@@ -45,4 +46,54 @@
     &:active {
         scale: 1;
     }
+}
+
+.coco_chat_page {
+    position: absolute;
+    bottom: 22px;
+    right: 22px;
+    border-radius: 15px;
+    transition: all 300ms;
+    z-index: -1;
+}
+
+.coco_chat_page:not([open]) {
+    height: 55px;
+    width: 55px;
+}
+
+
+.coco_chat_page:not([open]) .coco_chat_close_page {
+    opacity: 0;
+}
+
+.coco_chat_page[open] {
+    height: 600px;
+    width: 400px;
+    background-color: var(--page-background);
+    border-radius: 20px;
+    box-shadow: 0 0 50px -40px #616161;
+}
+
+.coco_chat_wrapper:has(.coco_chat_page[open])  .coco_chat_button {
+    opacity: 0;
+}
+
+.coco_chat_close_page {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: #e6e6e6;
+    cursor: pointer;
+    top: 10px;
+    left: 10px;
+    border: 0;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.coco_chat_close_page_icon path {
+    stroke: darkslategray;
 }
