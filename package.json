@@ -1,6 +1,6 @@
 {
   "name": "cocochat",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Cocochat company app",
   "main": "dist/cocochat.umd.js",
   "module": "dist/cocochat.es.js",
