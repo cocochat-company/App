@@ -1,5 +1,5 @@
 {
-  "name": "app",
+  "name": "cocochat",
   "version": "1.0.0",
   "description": "Cocochat company app",
   "main": "dist/cocochat.umd.js",
