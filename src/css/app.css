@@ -77,7 +77,7 @@
     z-index: calc(var(--cocochat-max-z-index) + 1);
 }
 
-.coco_chat_wrapper:has(.coco_chat_page[open])  .coco_chat_button {
+.coco_chat_wrapper:has(.coco_chat_page[open]) .coco_chat_button {
     opacity: 0;
 }
 
@@ -105,4 +105,27 @@
     height: 80px;
     background-color: color-mix(in srgb, var(--color-cocochat-primary) 85%, transparent);
     border-radius: 20px 20px 0 0;
+    display: flex;
+    padding-inline: 15px;
+    align-items: center;
+    gap: 20px;
+
+    & > div:nth-child(1) > img {
+        height: 55px;
+    }
+
+    & > div:nth-child(2) {
+        display: flex;
+        flex-direction: column;
+        color: white;
+
+        & > span {
+          font-weight: bold;
+            font-size: 17px;
+        }
+
+        & > p {
+            font-size: 14px;
+        }
+    }
 }

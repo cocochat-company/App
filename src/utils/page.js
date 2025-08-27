@@ -18,7 +18,13 @@ const page = () => {
     `)
     page.insertAdjacentHTML("beforeend", `
         <div class="coco_chat_page_header">
-            
+            <div>
+                <img src="https://unpkg.com/cocochat@1.0.6/dist/cocochat.png" alt="coco chat">
+            </div>
+            <div>
+                <span>کوکو چت, اماده برای جواب دادن</span>
+                <p>سوالات خود را درباره ما بپرسید</p>
+            </div>
         </div>
     `)
 
