@@ -1,9 +1,45 @@
+:root {
+    --color-primary: #0005b3;
+    --max-z-index: 1000;
+}
+
+@keyframes toUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
 .coco_chat_wrapper {
-    border: 1px solid rebeccapurple;
-    width: 20px;
-    height: 20px;
+    border: 1px solid lightgray;
+    min-width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: var(--max-z-index);
+    animation-name: toUp;
+    animation-duration: 200ms;
+    animation-delay: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 }
 
 .coco_chat_button {
+    height: 55px;
+    width: 55px;
+    background-color: var(--color-primary);
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 200ms;
 
+    &:hover {
+        scale: 1.08;
+    }
+
+    &:active {
+        scale: 1;
+    }
 }

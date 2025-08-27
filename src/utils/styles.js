@@ -1,6 +1,7 @@
 const styles = () => {
     const links = [
         "https://unpkg.com/cocochat/dist/cocochat.css",
+        "http://localhost:5173/src/css/app.css"
     ]
 
     links.map(link => {
