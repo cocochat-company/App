@@ -4,6 +4,7 @@ const page = () => {
 
     page.classList.add("coco_chat_page")
     close_btn.classList.add("coco_chat_close_page")
+
     close_btn.insertAdjacentHTML("beforeend", `
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="coco_chat_close_page_icon">
             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -15,6 +16,11 @@ const page = () => {
             </g>
         </svg>
     `)
+    page.insertAdjacentHTML("beforeend", `
+        <div>
+        
+        </div>
+    `)
 
     page.appendChild(close_btn)
     document.coco_wrapper.appendChild(page)
@@ -22,6 +28,8 @@ const page = () => {
     close_btn.addEventListener("click", (e) => {
         page.toggleAttribute("open")
     })
+    page.toggleAttribute("open")
+
 }
 
 export default page

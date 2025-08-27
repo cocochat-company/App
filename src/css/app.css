@@ -60,6 +60,7 @@
 .coco_chat_page:not([open]) {
     height: 55px;
     width: 55px;
+    opacity: 0;
 }
 
 
@@ -68,8 +69,9 @@
 }
 
 .coco_chat_page[open] {
-    height: 600px;
+    height: 650px;
     width: 400px;
+    opacity: 1;
     background-color: var(--page-background);
     border-radius: 20px;
     box-shadow: 0 0 50px -40px #616161;
