@@ -120,12 +120,63 @@
         color: white;
 
         & > span {
-          font-weight: bold;
+            font-weight: bold;
             font-size: 17px;
         }
 
         & > p {
             font-size: 14px;
+        }
+    }
+}
+
+.coco_chat_page_content {
+    height: calc(100% - (80px + 64px));
+}
+
+.coco_chat_page_footer {
+    min-height: 64px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px 10px;
+
+    & > div {
+        border: 1px solid var(--color-cocochat-primary);
+        width: 100%;
+        border-radius: 15px;
+        display: flex;
+        padding: 5px;
+        justify-content: space-between;
+
+        & > button {
+            background-color: var(--color-cocochat-primary);
+            border: none;
+            border-radius: 15px;
+            padding: 0 20px;
+            cursor: pointer;
+            height: 42px;
+
+            & > svg {
+                rotate: 180deg;
+                width: 25px;
+            }
+        }
+
+        & > input {
+            border-radius: 15px;
+            outline: none;
+            border: none;
+            font-size: 18px;
+            padding: 0 5px 0 0;
+            width: calc(100% - (65px + 10px));
+
+            &:focus-visible {
+                outline: none;
+            }
+
+            &::placeholder {
+                color: #8a8a8a;
+            }
         }
     }
 }
