@@ -1,6 +1,5 @@
 :root {
-    --color-cocochat-primary: #0005b3;
-    --color-cocochat-primary-dark: #00047c;
+    --color-cocochat-primary: transparent;
     --page-background: #ffffff;
     --cocochat-max-z-index: 10000;
 }
