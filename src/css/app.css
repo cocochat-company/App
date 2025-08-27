@@ -1,5 +1,6 @@
 :root {
     --color-primary: #0005b3;
+    --color-primary-dark: #00047c;
     --max-z-index: 1000;
 }
 
@@ -13,7 +14,8 @@
 }
 
 .coco_chat_wrapper {
-    border: 1px solid lightgray;
+    /*border: 1px solid lightgray;*/
+    border: 0;
     min-width: 100px;
     height: 100px;
     display: flex;
@@ -34,6 +36,7 @@
     border-radius: 15px;
     cursor: pointer;
     transition: all 200ms;
+    box-shadow: 0 5px 10px -6px var(--color-primary-dark);
 
     &:hover {
         scale: 1.08;
