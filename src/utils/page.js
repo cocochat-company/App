@@ -19,7 +19,7 @@ const page = () => {
     page.insertAdjacentHTML("beforeend", `
         <div class="coco_chat_page_header">
             <div>
-                <img src="https://unpkg.com/cocochat@1.0.6/dist/cocochat.png" alt="coco chat">
+                <img src="https://unpkg.com/cocochat@latest/dist/white-logo.svg" alt="coco chat" style="margin-top: 5px">
             </div>
             <div>
                 <span>کوکو چت, اماده برای جواب دادن</span>
@@ -49,7 +49,7 @@ const page = () => {
     close_btn.addEventListener("click", (e) => {
         page.toggleAttribute("open")
     })
-    page.toggleAttribute("open")
+    // page.toggleAttribute("open")
 
     let coco_chat_form = document.querySelector("form.coco_chat_page_footer")
     coco_chat_form.addEventListener("submit", (e) => {
