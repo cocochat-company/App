@@ -13,6 +13,21 @@
     }
 }
 
+[class^=coco_chat],
+[class^=coco_chat] div,
+[class^=coco_chat] p,
+[class^=coco_chat] span,
+[class^=coco_chat] svg,
+[class^=coco_chat] input,
+[class^=coco_chat] img {
+    box-sizing: border-box;
+}
+
+[class^=coco_chat] p {
+    padding: 0;
+    margin: 0;
+}
+
 .coco_chat_wrapper {
     /*border: 1px solid lightgray;*/
     border: 0;
@@ -134,7 +149,7 @@
 }
 
 .coco_chat_page_content {
-    height: calc(100% - (80px + 64px));
+    height: calc(100% - (80px + 64px + 20px));
 }
 
 .coco_chat_page_footer {
@@ -182,4 +197,12 @@
             }
         }
     }
+}
+
+.coco_chat_welcome {
+    background-color: #efefef;
+    width: 80%;
+    padding: 10px;
+    border-radius: 15px;
+    margin: 20px auto;
 }

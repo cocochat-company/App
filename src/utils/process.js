@@ -12,6 +12,7 @@ function getScriptParams() {
 const process = () => {
     const params = getScriptParams();
 
+    window.coco_chat_welcome = params?.welcome;
     document.documentElement.style.setProperty("--color-cocochat-primary", `#${params?.color}`);
 }
 

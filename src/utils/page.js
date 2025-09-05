@@ -26,10 +26,12 @@ const page = () => {
                 <p>سوالات خود را درباره ما بپرسید</p>
             </div>
         </div>
-        <div class="coco_chat_page_content"></div>
-        <forn class="coco_chat_page_footer">
+        <div class="coco_chat_page_content">
+            <div class="coco_chat_welcome">${window.coco_chat_welcome}</div>
+        </div>
+        <form class="coco_chat_page_footer">
             <div>
-                <input type="text" placeholder="چیزی تایپ کنید...">
+                <input type="text" placeholder="چیزی تایپ کنید..." name="question">
                 <button>
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -40,7 +42,7 @@ const page = () => {
                 </svg>
             </button>
             </div>
-        </forn>
+        </form>
     `)
 
     page.appendChild(close_btn)
@@ -54,6 +56,17 @@ const page = () => {
     let coco_chat_form = document.querySelector("form.coco_chat_page_footer")
     coco_chat_form.addEventListener("submit", (e) => {
         e.preventDefault()
+
+        const formData = new FormData(e.currentTarget);
+        const formValues = Object.fromEntries(formData.entries());
+
+        let xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            let data = JSON.parse(xhr.responseText)
+            alert(data.data.content)
+        };
+        xhr.open("GET", `http://127.0.0.1:8000/api/v1/question?question=${formValues?.question}`, true);
+        xhr.send();
     })
 
 }
