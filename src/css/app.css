@@ -235,9 +235,15 @@
         height: 100dvh;
         width: 100vw;
         border-radius: 0 !important;
-        right: 0 !important;
-        /*left: 0 !important;*/
         bottom: 0;
+    }
+
+    .coco_chat_page[position="bottom-right"] {
+        right: 0 !important;
+    }
+
+    .coco_chat_page[position="bottom-left"] {
+        left: 0 !important;
     }
 
     .coco_chat_page_header {

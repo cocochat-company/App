@@ -19,6 +19,7 @@ const page = () => {
         }
     }
     page.style.opacity = "0"
+    page.setAttribute("position", position)
 
     page.classList.add("coco_chat_page")
     close_btn.classList.add("coco_chat_close_page")
