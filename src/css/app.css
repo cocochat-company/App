@@ -76,6 +76,8 @@
     height: 650px;
     width: 400px;
     max-height: 95dvh;
+    overflow: hidden;
+    background-color: white;
 
     ::-webkit-scrollbar {
         width: 10px;
@@ -103,7 +105,7 @@
 .coco_chat_page[open] {
     opacity: 1 !important;
     background-color: var(--page-background);
-    border-radius: 20px;
+    border-radius: 10px;
     box-shadow: 0 0 50px -40px #616161;
     z-index: calc(var(--cocochat-max-z-index) + 1);
 }
@@ -135,7 +137,7 @@
     width: 100%;
     height: 80px;
     background-color: color-mix(in srgb, var(--color-cocochat-primary) 85%, transparent);
-    border-radius: 20px 20px 0 0;
+    border-radius: 10px 10px 0 0;
     display: flex;
     padding-inline: 15px;
     align-items: center;
@@ -167,49 +169,54 @@
 }
 
 .coco_chat_page_footer {
-    min-height: 64px;
-    border: 1px solid red;
     display: flex;
-    align-items: center;
-    padding: 0 10px 10px;
+    align-items: start;
+    justify-content: space-between;
+    padding: 0;
+    box-shadow: 0 26px 42px 0 #000000bf;
+    overflow: hidden;
+    padding-inline: 12px;
+    padding-block: 8px;
 
-    & > div {
-        border: 1px solid var(--color-cocochat-primary);
-        width: 100%;
-        border-radius: 15px;
+
+    & > button {
+        border: none;
+        background-color: white;
         display: flex;
-        padding: 5px;
-        justify-content: space-between;
+        justify-content: center;
+        align-items: center;
+        padding-top: 3px;
+        cursor: pointer;
 
-        & > button {
-            background-color: var(--color-cocochat-primary);
-            border: none;
-            border-radius: 15px;
-            padding: 0 20px;
-            cursor: pointer;
-            height: 42px;
+        & > svg path {
+            fill: #d5d5d5;
+        }
+    }
 
-            & > svg {
-                rotate: 180deg;
-                width: 25px;
-            }
+    & > textarea {
+        flex: 1;
+        outline: none;
+        border: none;
+        font-size: 14px;
+        resize: none;
+        overflow-y: auto;
+        height: auto;
+        min-height: 30px;
+        max-height: 150px;
+        line-height: 20px;
+        padding-top: 5px;
+        color: #676767;
+
+        &:focus-visible {
+            outline: none;
         }
 
-        & > input {
-            border-radius: 15px;
-            outline: none;
-            border: none;
-            font-size: 18px;
-            padding: 0 5px 0 0;
-            width: calc(100% - (65px + 10px));
+        &::placeholder {
+            color: #8a8a8a;
+        }
 
-            &:focus-visible {
-                outline: none;
-            }
-
-            &::placeholder {
-                color: #8a8a8a;
-            }
+        &:valid + button svg path {
+            fill: var(--color-cocochat-primary);
         }
     }
 }
@@ -229,6 +236,7 @@
         width: 100vw;
         border-radius: 0 !important;
         right: 0 !important;
+        /*left: 0 !important;*/
         bottom: 0;
     }
 

@@ -1,0 +1,9 @@
+const cocoIcon = (cl) => {
+    let color = cl ?? window.coco_chat_color
+
+    return `
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="23" height="23" fill="${color}"><path d="M22,3,1,12l21,9V14L7,12l15-2Z"></path></svg>
+    `
+}
+
+export default cocoIcon;
