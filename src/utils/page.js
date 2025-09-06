@@ -1,6 +1,22 @@
+import cocoIcon from "../icons/cocoIcon";
+
 const page = () => {
     const page = document.createElement("div")
     const close_btn = document.createElement("button")
+
+    let position = window.coco_chat_position;
+    if (position) {
+        switch (position) {
+            case "bottom-right":
+                page.style.right = "22px"
+                break;
+            case "bottom-left":
+                page.style.left = "22px"
+                break;
+            default:
+                page.style.right = "22px"
+        }
+    }
 
     page.classList.add("coco_chat_page")
     close_btn.classList.add("coco_chat_close_page")
@@ -21,6 +37,7 @@ const page = () => {
             <div>
                 <img src="https://unpkg.com/cocochat@latest/dist/white-logo.svg" alt="coco chat" style="margin-top: 5px">
             </div>
+            ${cocoIcon()}
             <div>
                 <span>کوکو چت, اماده برای جواب دادن</span>
                 <p>سوالات خود را درباره ما بپرسید</p>

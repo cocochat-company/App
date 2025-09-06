@@ -13,6 +13,8 @@ const process = () => {
     const params = getScriptParams();
 
     window.coco_chat_welcome = params?.welcome;
+    window.coco_chat_position = params?.position;
+    window.coco_chat_color = params?.color;
     document.documentElement.style.setProperty("--color-cocochat-primary", `#${params?.color}`);
 }
 
