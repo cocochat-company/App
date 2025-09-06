@@ -47,8 +47,17 @@ const page = () => {
             </div>
         </div>
         <div class="coco_chat_page_content">
-            <div class="coco_chat_message_wrapper">
-                ${cornerIcon()}
+            <div class="coco_chat_message_wrapper" agent="system">
+                <div>
+                    ${cornerIcon()}
+                    سلام خوبی؟
+                </div>
+            </div>
+            <div class="coco_chat_message_wrapper" agent="user">
+                <div>
+                    ${cornerIcon()}
+                    ممنون سوال خود را بپرسید
+                </div>
             </div>
         </div>
         <form class="coco_chat_page_footer">
