@@ -1,10 +1,10 @@
+import cocoIcon from "../icons/cocoIcon";
+
 const button = () => {
     const element = document.createElement("div")
     element.classList.add("coco_chat_button")
 
-    element.insertAdjacentHTML("beforeend", `
-        <img src="https://unpkg.com/cocochat@latest/dist/white-logo.svg" alt="coco chat">
-    `)
+    element.insertAdjacentHTML("beforeend", cocoIcon("30", "auto", "#fff"))
     document.coco_wrapper.appendChild(element)
 
     element.addEventListener("click", (e) => {

@@ -17,6 +17,7 @@ const page = () => {
                 page.style.right = "22px"
         }
     }
+    page.style.opacity = "0"
 
     page.classList.add("coco_chat_page")
     close_btn.classList.add("coco_chat_close_page")
@@ -35,7 +36,7 @@ const page = () => {
     page.insertAdjacentHTML("beforeend", `
         <div class="coco_chat_page_header">
             <div>
-                <img src="https://unpkg.com/cocochat@latest/dist/white-logo.svg" alt="coco chat" style="margin-top: 5px">
+                ${cocoIcon("40", "auto", "#fff", "margin-top: 5px")}
             </div>
             <div>
                 <span>کوکو چت, اماده برای جواب دادن</span>
@@ -43,7 +44,7 @@ const page = () => {
             </div>
         </div>
         <div class="coco_chat_page_content">
-            <div class="coco_chat_welcome">${window.coco_chat_welcome}</div><div class="coco_chat_welcome">${window.coco_chat_welcome}</div><div class="coco_chat_welcome">${window.coco_chat_welcome}</div><div class="coco_chat_welcome">${window.coco_chat_welcome}</div><div class="coco_chat_welcome">${window.coco_chat_welcome}</div><div class="coco_chat_welcome">${window.coco_chat_welcome}</div><div class="coco_chat_welcome">${window.coco_chat_welcome}</div><div class="coco_chat_welcome">${window.coco_chat_welcome}</div><div class="coco_chat_welcome">${window.coco_chat_welcome}</div><div class="coco_chat_welcome">${window.coco_chat_welcome}</div><div class="coco_chat_welcome">${window.coco_chat_welcome}</div><div class="coco_chat_welcome">${window.coco_chat_welcome}</div><div class="coco_chat_welcome">${window.coco_chat_welcome}</div><div class="coco_chat_welcome">${window.coco_chat_welcome}</div><div class="coco_chat_welcome">${window.coco_chat_welcome}</div><div class="coco_chat_welcome">${window.coco_chat_welcome}</div><div class="coco_chat_welcome">${window.coco_chat_welcome}</div><div class="coco_chat_welcome">${window.coco_chat_welcome}</div><div class="coco_chat_welcome">${window.coco_chat_welcome}</div><div class="coco_chat_welcome">${window.coco_chat_welcome}</div><div class="coco_chat_welcome">${window.coco_chat_welcome}</div><div class="coco_chat_welcome">${window.coco_chat_welcome}</div><div class="coco_chat_welcome">${window.coco_chat_welcome}</div><div class="coco_chat_welcome">${window.coco_chat_welcome}</div><div class="coco_chat_welcome">${window.coco_chat_welcome}</div><div class="coco_chat_welcome">${window.coco_chat_welcome}</div><div class="coco_chat_welcome">${window.coco_chat_welcome}</div><div class="coco_chat_welcome">${window.coco_chat_welcome}</div><div class="coco_chat_welcome">${window.coco_chat_welcome}</div><div class="coco_chat_welcome">${window.coco_chat_welcome}</div><div class="coco_chat_welcome">${window.coco_chat_welcome}</div><div class="coco_chat_welcome">${window.coco_chat_welcome}</div><div class="coco_chat_welcome">${window.coco_chat_welcome}</div><div class="coco_chat_welcome">${window.coco_chat_welcome}</div><div class="coco_chat_welcome">${window.coco_chat_welcome}</div><div class="coco_chat_welcome">${window.coco_chat_welcome}</div><div class="coco_chat_welcome">${window.coco_chat_welcome}</div><div class="coco_chat_welcome">${window.coco_chat_welcome}</div><div class="coco_chat_welcome">${window.coco_chat_welcome}</div><div class="coco_chat_welcome">${window.coco_chat_welcome}</div><div class="coco_chat_welcome">${window.coco_chat_welcome}</div><div class="coco_chat_welcome">${window.coco_chat_welcome}</div><div class="coco_chat_welcome">${window.coco_chat_welcome}</div><div class="coco_chat_welcome">${window.coco_chat_welcome}</div><div class="coco_chat_welcome">${window.coco_chat_welcome}</div>
+            
         </div>
         <form class="coco_chat_page_footer">
             <div>

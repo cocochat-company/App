@@ -75,6 +75,7 @@
     flex-direction: column;
     height: 650px;
     width: 400px;
+    max-height: 95dvh;
 
     ::-webkit-scrollbar {
         width: 10px;
@@ -100,7 +101,7 @@
 }
 
 .coco_chat_page[open] {
-    opacity: 1;
+    opacity: 1 !important;
     background-color: var(--page-background);
     border-radius: 20px;
     box-shadow: 0 0 50px -40px #616161;
@@ -219,4 +220,19 @@
     padding: 10px;
     border-radius: 15px;
     margin: 20px auto;
+}
+
+@media screen and (max-width: 640px) {
+    .coco_chat_page {
+        max-height: none;
+        height: 100dvh;
+        width: 100vw;
+        border-radius: 0 !important;
+        right: 0 !important;
+        bottom: 0;
+    }
+
+    .coco_chat_page_header {
+        border-radius: 0 !important;
+    }
 }
