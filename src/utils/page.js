@@ -1,6 +1,7 @@
 import cocoIcon from "../icons/cocoIcon";
 import sendIcon from "../icons/sendIcon";
 import cornerIcon from "../icons/cornerIcon";
+import cornerIcon2 from "../icons/cornerIcon2";
 
 const page = () => {
     const page = document.createElement("div")
@@ -47,15 +48,15 @@ const page = () => {
             </div>
         </div>
         <div class="coco_chat_page_content">
-            <div class="coco_chat_message_wrapper" agent="system">
+            <div class="coco_chat_message_wrapper" agent="user">
                 <div>
                     ${cornerIcon()}
                     سلام خوبی؟
                 </div>
             </div>
-            <div class="coco_chat_message_wrapper" agent="user">
+            <div class="coco_chat_message_wrapper" agent="system">
                 <div>
-                    ${cornerIcon()}
+                    ${cornerIcon2()}
                     ممنون سوال خود را بپرسید
                 </div>
             </div>
