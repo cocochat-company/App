@@ -4,27 +4,27 @@ import cornerIcon from "../icons/cornerIcon";
 import cornerIcon2 from "../icons/cornerIcon2";
 
 const page = () => {
-    const page = document.createElement("div")
-    const close_btn = document.createElement("button")
+    const page = document.createElement("div");
+    const close_btn = document.createElement("button");
 
     let position = window.coco_chat_position;
     if (position) {
         switch (position) {
             case "bottom-right":
-                page.style.right = "22px"
+                page.style.right = "22px";
                 break;
             case "bottom-left":
-                page.style.left = "22px"
+                page.style.left = "22px";
                 break;
             default:
-                page.style.right = "22px"
+                page.style.right = "22px";
         }
     }
-    page.style.opacity = "0"
-    page.setAttribute("position", position)
+    page.style.opacity = "0";
+    page.setAttribute("position", position);
 
-    page.classList.add("coco_chat_page")
-    close_btn.classList.add("coco_chat_close_page")
+    page.classList.add("coco_chat_page");
+    close_btn.classList.add("coco_chat_close_page");
 
     close_btn.insertAdjacentHTML("beforeend", `
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="coco_chat_close_page_icon">
@@ -36,51 +36,39 @@ const page = () => {
                 </g> 
             </g>
         </svg>
-    `)
+    `);
+
     page.insertAdjacentHTML("beforeend", `
         <div class="coco_chat_page_header">
             <div>
                 ${cocoIcon(40, 40, "#fff", "margin-top: 5px")}
             </div>
             <div>
-                <span>کوکو چت, اماده برای جواب دادن</span>
+                <span>کوکو چت, آماده برای جواب دادن</span>
                 <p>سوالات خود را درباره ما بپرسید</p>
             </div>
         </div>
-        <div class="coco_chat_page_content">
-            <div class="coco_chat_message_wrapper" agent="user">
-                <div>
-                    ${cornerIcon()}
-                    سلام خوبی؟
-                </div>
-            </div>
-            <div class="coco_chat_message_wrapper" agent="system">
-                <div>
-                    ${cornerIcon2()}
-                    ممنون سوال خود را بپرسید
-                </div>
-            </div>
-        </div>
+        <div class="coco_chat_page_content"></div>
         <form class="coco_chat_page_footer">
-                <textarea placeholder="پیامی بنویسید..." name="question" required></textarea>
-                <button>${sendIcon()}</button>
+            <textarea placeholder="پیامی بنویسید..." name="question" required></textarea>
+            <button>${sendIcon()}</button>
         </form>
-    `)
+    `);
 
-    page.appendChild(close_btn)
-    document.coco_wrapper.appendChild(page)
+    page.appendChild(close_btn);
+    document.coco_wrapper.appendChild(page);
 
-    close_btn.addEventListener("click", (e) => {
-        page.toggleAttribute("open")
-    })
+    close_btn.addEventListener("click", () => {
+        page.toggleAttribute("open");
+    });
 
     const textarea = page.querySelector("textarea");
+    const chatContent = page.querySelector(".coco_chat_page_content");
+    const coco_chat_form = page.querySelector("form.coco_chat_page_footer");
 
     function autoResize() {
         textarea.style.height = "30px";
-
         const newHeight = Math.min(textarea.scrollHeight, 150);
-
         textarea.style.height = newHeight + "px";
 
         if (textarea.scrollHeight > 150) {
@@ -91,7 +79,6 @@ const page = () => {
     }
 
     autoResize();
-
     textarea.addEventListener("input", autoResize);
 
     textarea.addEventListener("keydown", (e) => {
@@ -101,23 +88,59 @@ const page = () => {
         }
     });
 
+    function addMessage(content, agent = "system") {
+        const wrapper = document.createElement("div");
+        wrapper.classList.add("coco_chat_message_wrapper");
+        wrapper.setAttribute("agent", agent);
 
-    let coco_chat_form = document.querySelector("form.coco_chat_page_footer")
+        const innerDiv = document.createElement("div");
+        if (agent === "user") {
+            innerDiv.innerHTML = `${cornerIcon()} ${content}`;
+        } else {
+            innerDiv.innerHTML = `${cornerIcon2()} ${content}`;
+        }
+
+        wrapper.appendChild(innerDiv);
+        chatContent.appendChild(wrapper);
+
+        chatContent.scrollTop = chatContent.scrollHeight;
+    }
+
     coco_chat_form.addEventListener("submit", (e) => {
-        e.preventDefault()
+        e.preventDefault();
 
         const formData = new FormData(e.currentTarget);
         const formValues = Object.fromEntries(formData.entries());
+        const userMessage = formValues.question.trim();
+        if (!userMessage) return;
+
+        addMessage(userMessage, "user");
+
+        textarea.value = "";
+        autoResize();
 
         let xhr = new XMLHttpRequest();
         xhr.onreadystatechange = function () {
-            let data = JSON.parse(xhr.responseText)
-            alert(data.data.content)
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                    try {
+                        let data = JSON.parse(xhr.responseText);
+                        if (data.success && data.data && data.data.content) {
+                            addMessage(data.data.content, "system");
+                        } else {
+                            addMessage("خطا در دریافت پاسخ از سرور", "system");
+                        }
+                    } catch {
+                        addMessage("پاسخ نامعتبر از سرور دریافت شد", "system");
+                    }
+                } else {
+                    addMessage("خطا در ارتباط با سرور", "system");
+                }
+            }
         };
-        xhr.open("GET", `http://127.0.0.1:8000/api/v1/question?question=${formValues?.question}`, true);
+        xhr.open("GET", `http://127.0.0.1:8000/api/v1/question?question=${encodeURIComponent(userMessage)}`, true);
         xhr.send();
-    })
+    });
+};
 
-}
-
-export default page
+export default page;
