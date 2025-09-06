@@ -73,6 +73,18 @@
     z-index: -1;
     display: flex;
     flex-direction: column;
+
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #ffffff;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: var(--color-cocochat-primary);
+    }
 }
 
 .coco_chat_page:not([open]) {
@@ -156,6 +168,7 @@
 
 .coco_chat_page_footer {
     min-height: 64px;
+    border: 1px solid red;
     display: flex;
     align-items: center;
     padding: 0 10px 10px;
