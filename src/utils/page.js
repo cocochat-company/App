@@ -1,5 +1,6 @@
 import cocoIcon from "../icons/cocoIcon";
 import sendIcon from "../icons/sendIcon";
+import cornerIcon from "../icons/cornerIcon";
 
 const page = () => {
     const page = document.createElement("div")
@@ -46,7 +47,9 @@ const page = () => {
             </div>
         </div>
         <div class="coco_chat_page_content">
-            
+            <div class="coco_chat_message_wrapper">
+                ${cornerIcon()}
+            </div>
         </div>
         <form class="coco_chat_page_footer">
                 <textarea placeholder="پیامی بنویسید..." name="question" required></textarea>

@@ -166,6 +166,11 @@
 .coco_chat_page_content {
     flex: 1;
     overflow: auto;
+    padding: 15px 12px 0 7px;
+}
+
+.coco_chat_message_wrapper {
+
 }
 
 .coco_chat_page_footer {
