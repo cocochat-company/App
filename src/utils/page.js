@@ -36,7 +36,7 @@ const page = () => {
     page.insertAdjacentHTML("beforeend", `
         <div class="coco_chat_page_header">
             <div>
-                ${cocoIcon("40", "auto", "#fff", "margin-top: 5px")}
+                ${cocoIcon(40, 40, "#fff", "margin-top: 5px")}
             </div>
             <div>
                 <span>کوکو چت, اماده برای جواب دادن</span>
