@@ -138,7 +138,7 @@ const page = () => {
                 }
             }
         };
-        xhr.open("GET", `http://127.0.0.1:8000/api/v1/question?question=${encodeURIComponent(userMessage)}`, true);
+        xhr.open("GET", `https://api.cocochat.ir/api/v1/question?question=${encodeURIComponent(userMessage)}`, true);
         xhr.send();
     });
 };
